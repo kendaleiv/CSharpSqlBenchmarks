@@ -106,69 +106,6 @@ namespace CSharpSqlBenchmarks
             reader.Close();
         }
 
-        //[Benchmark]
-        //public async Task LocalDb_SqlDataReader_AsyncConnection()
-        //{
-        //    using var connection = new SqlConnection(db.ConnectionString);
-        //    await connection.OpenAsync();
-
-        //    var selectCommand = connection.CreateCommand();
-        //    selectCommand.CommandText = "SELECT id from OneRow";
-        //    var reader = selectCommand.ExecuteReader();
-
-        //    if (reader.HasRows)
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            reader.GetGuid(0);
-        //        }
-        //    }
-
-        //    reader.Close();
-        //}
-
-        //[Benchmark]
-        //public async Task LocalDb_SqlDataReader_AsyncConnectionAndAsyncExecuteReader()
-        //{
-        //    using var connection = new SqlConnection(db.ConnectionString);
-        //    await connection.OpenAsync();
-
-        //    var selectCommand = connection.CreateCommand();
-        //    selectCommand.CommandText = "SELECT id from OneRow";
-        //    var reader = await selectCommand.ExecuteReaderAsync();
-
-        //    if (reader.HasRows)
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            reader.GetGuid(0);
-        //        }
-        //    }
-
-        //    reader.Close();
-        //}
-
-        //[Benchmark]
-        //public async Task LocalDb_SqlDataReader_AsyncConnectionAndAsyncExecuteReaderAndAsyncRead()
-        //{
-        //    using var connection = new SqlConnection(db.ConnectionString);
-        //    await connection.OpenAsync();
-
-        //    var selectCommand = connection.CreateCommand();
-        //    selectCommand.CommandText = "SELECT id from OneRow";
-        //    var reader = await selectCommand.ExecuteReaderAsync();
-
-        //    if (reader.HasRows)
-        //    {
-        //        while (await reader.ReadAsync())
-        //        {
-        //            reader.GetGuid(0);
-        //        }
-        //    }
-
-        //    reader.Close();
-        //}
-
         [Benchmark]
         public async Task LocalDb_SqlDataReader_AsyncConnection_OneRow()
         {
